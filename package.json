@@ -16,5 +16,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Kartspire/star-wars/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
   }
 }
