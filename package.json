@@ -1,0 +1,20 @@
+{
+  "name": "star-wars",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "homepage": "https://Kartspire.github.io/star-wars",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kartspire/star-wars.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kartspire/star-wars/issues"
+  }
+}
