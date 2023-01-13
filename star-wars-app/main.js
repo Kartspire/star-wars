@@ -1,4 +1,7 @@
+import { loader } from "./loader/loader.js";
+
 const cssPromises = {};
+let loading = true;
 
 function loadResource(src) {
   if (src.endsWith(".js")) {
@@ -39,6 +42,7 @@ renderPage(
 
 async function loadAndRender(episodeId) {
   if (episodeId) {
+    document.querySelector("#app").append(loader);
     const { render } = await loadResource("./star-wars-details.js");
     loadResource(
       "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -53,13 +57,17 @@ async function loadAndRender(episodeId) {
           await urlsToDataArray(data.species)
         )
       );
+    loader.remove();
   } else {
+    document.querySelector("#app").append(loader);
+
     const { render } = await loadResource("./star-wars-list.js");
     loadResource(
       "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
     );
     const data = await loadResource("https://swapi.dev/api/films");
     document.querySelector("#app").append(render(data.results));
+    loader.remove();
   }
 }
 
